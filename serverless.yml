@@ -1,0 +1,16 @@
+org: dreamerror
+app: marusya-skill
+service: marusya-skill
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.8
+
+functions:
+  webhook:
+    handler: handler.webhook
+    events:
+      - httpApi:
+          path: /webhook
+          method: post
